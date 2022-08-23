@@ -1,9 +1,4 @@
-// function getValueFromInput(id) {
-//   const inputField = document.getElementById(id);
-//   const inputFieldString = inputField.value;
-//   const inputFieldNumber = parseFloat(inputFieldString)
-//   return inputFieldNumber
-// }
+
 
 document.getElementById('btn-calculate').addEventListener('click', function(){
   const perPlayer = document.getElementById('price-field');
@@ -33,20 +28,8 @@ document.getElementById('btn-total-calculation').addEventListener('click', funct
   const playerExpenseValue = parseInt(playerExpenseValueString);
   
 
-  const totalExpense = perPlayerValue * 5;
+  const totalExpense = perPlayerValue * list.length;
   playerExpense.innerText = totalExpense;
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   const managerField = document.getElementById('manager-field');

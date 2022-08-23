@@ -4,7 +4,7 @@ function playerList(){
   const listContainer = document.getElementById('selected-five');
 
   if(list.length > 5){
-    alert('cant add more')
+    alert('Max number of player already selected')
   }
   else{
     listContainer.textContent = '';
