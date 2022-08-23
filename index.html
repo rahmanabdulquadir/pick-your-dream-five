@@ -17,7 +17,7 @@
     <header class=" ">
       <div
         class="hero min-h-screen"
-        style="background-image: url(./wp3461339.webp)"
+        style="background-image: url(./images/wp3461339.webp)"
       >
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
@@ -34,40 +34,53 @@
       </div>
     </header>
 
+
+
+
     <main class="mt-12">
       <div class="grid grid-cols-4 gap-x-20 mb-8 w-9/12 mx-auto text-white">
         <div class="card card-compact w-72 bg-base-100 shadow-xl">
           <figure><img src="./images/lionel-messi2.jpg" alt="Shoes" /></figure>
           <div class="card-body">
-            <h2 class="card-title text-white text-3xl">Lionel Messi</h2>
+            <h2 id="messi" class="card-title text-white text-3xl">Lionel Messi</h2>
             <p>36 Goal . 28 Assist</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">SELECT</button>
+              <button id="btn-messi" class="btn btn-primary" nclick="selectPlayer(this)">SELECT</button>
             </div>
           </div>
         </div>
         <div class="card card-compact w-72 bg-base-100 shadow-xl">
           <figure><img src="./images/lionel-messi2.jpg" alt="Shoes" /></figure>
           <div class="card-body">
-            <h2 class="card-title text-white text-3xl">Lionel Messi</h2>
+            <h2 id="neymar" class="card-title text-white text-3xl">Neymar jr</h2>
             <p>36 Goal . 28 Assist</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">SELECT</button>
+              <button id="btn-neymar" class="btn btn-primary" onclick="selectPlayer(this)">SELECT</button>
             </div>
           </div>
         </div>
         <div class="card card-compact w-72 bg-base-100 shadow-xl">
           <figure><img src="./images/lionel-messi2.jpg" alt="Shoes" /></figure>
           <div class="card-body">
-            <h2 class="card-title text-white text-3xl">Lionel Messi</h2>
+            <h2 id="mbappe" class="card-title text-white text-3xl">Mbappe</h2>
             <p>36 Goal . 28 Assist</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">SELECT</button>
+              <button id="btn-mbappe" class="btn btn-primary" onclick="selectPlayer(this)">SELECT</button>
             </div>
           </div>
         </div>
-        <div class="card card-compact w-72 bg-base-100 shadow-xl">
+        <div id="warning" class="card card-compact w-72 bg-base-100 shadow-xl">
           <h1 class="text-center text-2xl mt-6">Selected - V</h1>
+          <h1 id="select-name-1" class="text-center mt-4"></h1>
+          <h1 id="select-name-2" class="text-center mt-4"></h1>
+          <h1 id="select-name-3" class="text-center mt-4"></h1>
+          <h1 id="select-name-4" class="text-center mt-4"></h1>
+          <h1 id="select-name-5" class="text-center mt-4"></h1>
+          <h1 id="select-name-6" class="text-center mt-4"></h1>
+
+
+
+
         </div>
       </div>
 
@@ -75,30 +88,30 @@
         <div class="card card-compact w-72 bg-base-100 shadow-xl">
           <figure><img src="./images/lionel-messi2.jpg" alt="Shoes" /></figure>
           <div class="card-body">
-            <h2 class="card-title text-white text-3xl">Lionel Messi</h2>
+            <h2 id="modrich" class="card-title text-white text-3xl">Modrich</h2>
             <p>36 Goal . 28 Assist</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">SELECT</button>
+              <button id="btn-modrich" class="btn btn-primary" onclick="selectPlayer(this)">SELECT</button>
             </div>
           </div>
         </div>
         <div class="card card-compact w-72 bg-base-100 shadow-xl">
           <figure><img src="./images/lionel-messi2.jpg" alt="Shoes" /></figure>
           <div class="card-body">
-            <h2 class="card-title text-white text-3xl">Lionel Messi</h2>
+            <h2 id="benzema" class="card-title text-white text-3xl">Karim Benzema</h2>
             <p>36 Goal . 28 Assist</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">SELECT</button>
+              <button id="btn-benzema" class="btn btn-primary" onclick="selectPlayer(this)">SELECT</button>
             </div>
           </div>
         </div>
         <div class="card card-compact w-72 bg-base-100 shadow-xl">
           <figure><img src="./images/lionel-messi2.jpg" alt="Shoes" /></figure>
           <div class="card-body">
-            <h2 class="card-title text-white text-3xl">Lionel Messi</h2>
+            <h2 id="ronaldo" class="card-title text-white text-3xl">Cristiano Ronaldo</h2>
             <p>36 Goal . 28 Assist</p>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">SELECT</button>
+              <button id="btn-ronaldo" class="btn btn-primary" onclick="selectPlayer(this)">SELECT</button>
             </div>
           </div>
         </div>
@@ -107,33 +120,39 @@
           <label for="input" class="font-medium text-lg text-center mt-6"
             >Per Player
             <input
-              id="income-field"
-              class="rounded-lg pl-2 border-2 w-1/2"
-              value="0"
-              type="number"
+              id="price-field"
+              class="rounded-lg pl-2 border-2 w-1/2 text-black"
+              value=""
+              type="text"
           /></label>
-          <button class="btn btn-wide mx-auto mt-4">Calculate</button>
-          <h1 class="text-center mt-3">Player Expense $<span>0</span></h1>
+          <button id="btn-calculate" class="btn btn-wide mx-auto mt-4">Calculate</button>
+          <h1 class="text-center mt-3">Player Expense $<span id="player-expense">0</span></h1>
           <label for="input" class="font-medium text-lg text-center mt-4"
             >Manager
             <input
-              id="income-field"
-              class="rounded-lg pl-2 border-2 w-1/2"
-              value="0"
+              id="manager-field"
+              class="rounded-lg pl-2 border-2 w-1/2 text-black"
+              value=""
               type="number"
           /></label>
           <label for="input" class="font-medium text-lg text-center mt-4"
             >Coach
             <input
-              id="income-field"
-              class="rounded-lg pl-2 border-2 w-1/2"
-              value="0"
+              id="coach-field"
+              class="rounded-lg pl-2 border-2 w-1/2 text-black"
+              value=""
               type="number"
           /></label>
-          <button class="btn btn-wide mx-auto mt-4">Calculate</button>
-          <h1 class="text- mt-12 pl-6 mr-24">Player Expense $<span>0</span></h1>
+          <button id="btn-total-calculation" class="btn btn-wide mx-auto mt-4">Calculate Total</button>
+          <h1 class="text- mt-12 text-center">Total Expense $<span id="total-expense-amount">0</span></h1>
         </div>
       </div>
     </main>
+    <!-- <script src="./js/script.js"></script> -->
+    <script src="./js/app.js"></script>
+    <script src="./js/budget.js"></script>
   </body>
+  <footer>
+
+  </footer>
 </html>
