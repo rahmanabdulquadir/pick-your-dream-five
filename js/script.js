@@ -1,37 +1,34 @@
-// function getValueFromInput(id) {
-//   const inputField = document.getElementById(id);
-//   const inputFieldString = inputField.innerText;
-//   // const inputFieldNumber = parseFloat(inputFieldString)
-//   return inputFieldNumber
-// }
-// document.getElementById('btn-select').addEventListener('click', function(){
-//   const playerName = getValueFromInput('player-name');
-// })
-const playerArray = [];
+const list = [];
 
-function display(plrName) {
-  console.log(plrName);
-  const olBody = document.getElementById("players");
-  olBody.innerHTML = "";
-  for (let i = 0; i < plrName.length; i++) {
-    // console.log(playerArray[i].playerName);
-    const name = playerArray[i].playerName;
-    const tr = document.createElement("tr");
+function playerList(){
+  const listContainer = document.getElementById('selected-five');
 
-    tr.innerText = `
-    <th>${i}</th>`;
-
-
-    olBody.appendChild(tr);
+  if(list.length > 5){
+    alert('cant add more')
   }
+  else{
+    listContainer.textContent = '';
+    for(let i = 0; i < list.length; i++){
+      const li = document.createElement('li');
+      li.innerHTML= `
+      <li>${i + 1} ${list[i].playerName}</li>
+      `;
+      listContainer.appendChild(li);
+      
+    }
+  }
+ 
 }
 
-function selectPlayer(element) {
+function addToList(element){
   const playerName = element.parentNode.parentNode.children[0].innerText;
-  // console.log(playerName);
-  const plrObj = {
-    playerName: playerName,
-  };
-  playerArray.push(plrObj);
-  display(playerArray);
+  const pd = {
+    playerName : playerName,
+  }
+
+
+  list.push(pd);
+
+  playerList();
 }
+ console.log('new file added')

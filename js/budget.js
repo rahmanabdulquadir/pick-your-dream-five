@@ -16,7 +16,7 @@ document.getElementById('btn-calculate').addEventListener('click', function(){
   const playerExpenseValue = parseInt(playerExpenseValueString);
   
 
-  const totalExpense = perPlayerValue * 5;
+  const totalExpense = perPlayerValue * list.length;
   playerExpense.innerText = totalExpense;
   perPlayer.value = ''
 
