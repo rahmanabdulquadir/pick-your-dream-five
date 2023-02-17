@@ -17,14 +17,14 @@ function playerList() {
   }
 }
 
-function addToList(element) {
-  const playerName = element.parentNode.parentNode.children[0].innerText;
-  const pd = {
-    playerName: playerName,
-  };
+// function addToList(element) {
+//   const playerName = element.parentNode.parentNode.children[0].innerText;
+//   const pd = {
+//     playerName: playerName,
+//   };
 
-  list.push(pd);
+//   list.push(pd);
 
-  playerList();
-}
-console.log("new file added");
+//   playerList();
+// }
+// console.log("new file added");
